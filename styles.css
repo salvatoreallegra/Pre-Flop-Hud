@@ -9,6 +9,10 @@
   text-align: center;
   vertical-align: center;
 }
+.box:hover {
+  background-color: yellow;
+  color: blue;
+}
 
 .wrapper {
   width: 600px;
@@ -17,4 +21,8 @@
   grid-template-columns: repeat(13, 35px);
   grid-template-rows: repeat(13, 35px);
   grid-auto-flow: column;
+}
+
+.navbar {
+  margin-bottom: 50px;
 }
