@@ -1,23 +1,23 @@
 //Add click event listener to add player button
-let opponents = JSON.parse(localStorage.getItem("opponent"));
+//
+
 let button = document.querySelector("#addPlayer");
 button.addEventListener("click", () => {
+  let opponents = JSON.parse(localStorage.getItem("opponents") || "[]");
+
   let opponentName = document.getElementById("opponent").value;
-  console.log("Button clicked.");
-  console.log(opponentName);
   opponents.push({
     name: opponentName,
     rfiHands: ["AKs", "AA"],
     ccHands: ["99", "88"],
     threeBetHands: ["AA", "KK"],
   });
-  console.log(opponents);
-  alert("Clicked");
+  console.log(opponents, "Array of opponents");
   storePlayerHand(opponents);
+  console.log("xxxx", localStorage);
 });
 
-function storePlayerHand(opponent) {
-  localStorage.setItem("opponent", JSON.stringify(opponent));
+function storePlayerHand(opponents) {
+  localStorage.setItem("opponents", JSON.stringify(opponents));
+  console.log("opponents in function", opponents);
 }
-
-console.log(opponents);
