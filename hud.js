@@ -14,7 +14,7 @@ for (let i = 0; i < opponents.length; i++) {
 }
 
 //toggle mode button color to show it's selected and assign a mode on toggle
-let mode = "";
+let mode = null;
 
 let btnRFI = document.getElementById("rfi");
 let btnCC = document.getElementById("cc");
@@ -56,6 +56,9 @@ btn3B.addEventListener("click", function () {
 //Add event listeners to the 13x13 grid on index.html and push hands to hand array on click
 document.querySelectorAll(".box").forEach((item) => {
   item.addEventListener("click", (event) => {
+    if (mode === null) {
+      alert("Please Select a Mode Before Entering Hands");
+    }
     console.log("Selection ....", sel.options[sel.selectedIndex].innerText);
     for (let i = 0; i < opponents.length; i++) {
       if (opponents[i].name === sel.options[sel.selectedIndex].innerText) {
