@@ -60,11 +60,30 @@ document.querySelectorAll(".box").forEach((item) => {
       alert("Please Select a Mode Before Entering Hands");
     }
     console.log("Selection ....", sel.options[sel.selectedIndex].innerText);
-    for (let i = 0; i < opponents.length; i++) {
-      if (opponents[i].name === sel.options[sel.selectedIndex].innerText) {
-        opponents[i].rfiHands.push(item.innerText);
-      }
+    switch (mode) {
+      case "rfi":
+        for (let i = 0; i < opponents.length; i++) {
+          if (opponents[i].name === sel.options[sel.selectedIndex].innerText) {
+            opponents[i].rfiHands.push(item.innerText);
+          }
+        }
+        break;
+      case "cc":
+        for (let i = 0; i < opponents.length; i++) {
+          if (opponents[i].name === sel.options[sel.selectedIndex].innerText) {
+            opponents[i].ccHands.push(item.innerText);
+          }
+        }
+        break;
+      case "3b":
+        for (let i = 0; i < opponents.length; i++) {
+          if (opponents[i].name === sel.options[sel.selectedIndex].innerText) {
+            opponents[i].threeBetHands.push(item.innerText);
+          }
+        }
+        break;
     }
+
     localStorage.setItem("opponents", JSON.stringify(opponents));
   });
 });
