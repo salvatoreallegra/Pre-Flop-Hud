@@ -29,6 +29,7 @@ btnRFI.addEventListener("click", function () {
     btn3B.style.backgroundColor = "";
     mode = "rfi";
   }
+  paintGrid(opponents, mode);
 });
 
 btnCC.addEventListener("click", function () {
@@ -87,5 +88,35 @@ document.querySelectorAll(".box").forEach((item) => {
     localStorage.setItem("opponents", JSON.stringify(opponents));
   });
 });
+
+function paintGrid(opponents, mode) {
+  let currentOpponent = sel.options[sel.selectedIndex].innerText;
+  if (mode === "rfi") {
+    opponents.forEach(function (arrayItem) {
+      if (arrayItem.name === currentOpponent) {
+        arrayItem.rfiHands.forEach(function (hand) {
+          console.log("Handy " + hand);
+          document.querySelectorAll(".box").forEach((item) => {
+            if (hand === item.innerText) {
+              item.style.backgroundColor = "red";
+            }
+          });
+        });
+      } //end if check if name == optionbox
+    }); //end foreach on opponents
+  } // end if for mode
+
+  //   //get opponents hands from object
+  //   console.log("grid....", opponents);
+  //   //iterate over grid and change color
+  //   for (let i = 0; i < opponents.length; i++) {
+  //     let matrix = document.getElementsByClassName("box");
+  //     for (let j = 0; j < matrix.length; i++) {
+  //       if (matrix.item(j).innerText === "AKs") {
+  //         matrix.item(j).style.backgroundColor = "yellow";
+  //       }
+  //     }
+  //   }
+} //end function
 
 console.log(localStorage);

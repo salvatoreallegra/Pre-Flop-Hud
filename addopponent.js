@@ -8,9 +8,9 @@ button.addEventListener("click", () => {
   let opponentName = document.getElementById("opponent").value;
   opponents.push({
     name: opponentName,
-    rfiHands: ["AKs", "AA"],
-    ccHands: ["99", "88"],
-    threeBetHands: ["AA", "KK"],
+    rfiHands: [],
+    ccHands: [],
+    threeBetHands: [],
   });
   console.log(opponents, "Array of opponents");
   storePlayerHand(opponents);
