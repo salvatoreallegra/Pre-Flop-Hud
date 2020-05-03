@@ -13,6 +13,15 @@ for (let i = 0; i < opponents.length; i++) {
   sel.add(opt, null);
 }
 
+//Paint appropriate grid when player is changed on select, will default to paint rfi
+sel.addEventListener("change", (event) => {
+  mode = "rfi";
+  paintGrid(opponents, mode);
+  btnRFI.style.backgroundColor = "blue";
+  btn3B.style.backgroundColor = "";
+  btnCC.style.backgroundColor = "";
+});
+
 //toggle mode button color to show it's selected and assign a mode on toggle
 let mode = null;
 
@@ -41,6 +50,7 @@ btnCC.addEventListener("click", function () {
     btn3B.style.backgroundColor = "";
     mode = "cc";
   }
+  paintGrid(opponents, mode);
 });
 
 btn3B.addEventListener("click", function () {
@@ -52,6 +62,7 @@ btn3B.addEventListener("click", function () {
     btnCC.style.backgroundColor = "";
     mode = "3b";
   }
+  paintGrid(opponents, mode);
 });
 
 //Add event listeners to the 13x13 grid on index.html and push hands to hand array on click
@@ -67,6 +78,7 @@ document.querySelectorAll(".box").forEach((item) => {
           if (opponents[i].name === sel.options[sel.selectedIndex].innerText) {
             opponents[i].rfiHands.push(item.innerText);
           }
+          item.style.backgroundColor = "red";
         }
         break;
       case "cc":
@@ -74,6 +86,7 @@ document.querySelectorAll(".box").forEach((item) => {
           if (opponents[i].name === sel.options[sel.selectedIndex].innerText) {
             opponents[i].ccHands.push(item.innerText);
           }
+          item.style.backgroundColor = "red";
         }
         break;
       case "3b":
@@ -81,6 +94,7 @@ document.querySelectorAll(".box").forEach((item) => {
           if (opponents[i].name === sel.options[sel.selectedIndex].innerText) {
             opponents[i].threeBetHands.push(item.innerText);
           }
+          item.style.backgroundColor = "red";
         }
         break;
     }
@@ -90,6 +104,9 @@ document.querySelectorAll(".box").forEach((item) => {
 });
 
 function paintGrid(opponents, mode) {
+  document.querySelectorAll(".box").forEach((item) => {
+    item.style.backgroundColor = "blue";
+  });
   let currentOpponent = sel.options[sel.selectedIndex].innerText;
   if (mode === "rfi") {
     opponents.forEach(function (arrayItem) {
@@ -105,18 +122,34 @@ function paintGrid(opponents, mode) {
       } //end if check if name == optionbox
     }); //end foreach on opponents
   } // end if for mode
-
-  //   //get opponents hands from object
-  //   console.log("grid....", opponents);
-  //   //iterate over grid and change color
-  //   for (let i = 0; i < opponents.length; i++) {
-  //     let matrix = document.getElementsByClassName("box");
-  //     for (let j = 0; j < matrix.length; i++) {
-  //       if (matrix.item(j).innerText === "AKs") {
-  //         matrix.item(j).style.backgroundColor = "yellow";
-  //       }
-  //     }
-  //   }
+  if (mode === "cc") {
+    opponents.forEach(function (arrayItem) {
+      if (arrayItem.name === currentOpponent) {
+        arrayItem.ccHands.forEach(function (hand) {
+          console.log("Handy " + hand);
+          document.querySelectorAll(".box").forEach((item) => {
+            if (hand === item.innerText) {
+              item.style.backgroundColor = "red";
+            }
+          });
+        });
+      } //end if check if name == optionbox
+    }); //end foreach on opponents
+  } // end if for mode
+  if (mode === "3b") {
+    opponents.forEach(function (arrayItem) {
+      if (arrayItem.name === currentOpponent) {
+        arrayItem.threeBetHands.forEach(function (hand) {
+          console.log("Handy " + hand);
+          document.querySelectorAll(".box").forEach((item) => {
+            if (hand === item.innerText) {
+              item.style.backgroundColor = "red";
+            }
+          });
+        });
+      } //end if check if name == optionbox
+    }); //end foreach on opponents
+  } // end if for mode
 } //end function
 
 console.log(localStorage);
