@@ -16,6 +16,9 @@ function compare(a, b) {
 }
 opponents.sort(compare);
 
+//display name above matrix
+let playerLabel = document.getElementById("playerName");
+
 let sel = document.getElementById("opponents-select");
 for (let i = 0; i < opponents.length; i++) {
   let opt = document.createElement("option");
@@ -31,6 +34,7 @@ sel.addEventListener("change", (event) => {
   btnRFI.style.backgroundColor = "blue";
   btn3B.style.backgroundColor = "";
   btnCC.style.backgroundColor = "";
+  playerLabel.innerText = sel.selectedOptions[0].innerText;
 });
 
 //toggle mode button color to show it's selected and assign a mode on toggle

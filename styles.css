@@ -1,3 +1,7 @@
+.col-md-6 {
+  border: 2px solid black;
+}
+
 .box {
   background-color: blue;
   color: #fff;
@@ -28,7 +32,8 @@
 }
 
 .mode {
-  margin: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 h1 {
