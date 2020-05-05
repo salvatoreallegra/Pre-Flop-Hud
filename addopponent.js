@@ -11,6 +11,11 @@ button.addEventListener("click", () => {
     rfiHands: [],
     ccHands: [],
     threeBetHands: [],
+    totalHands: 0,
+    rfiCount: 0,
+    threeBetCount: 0,
+    coldCallCount: 0,
+    openLimpCount: 0,
   });
   console.log(opponents, "Array of opponents");
   storePlayerHand(opponents);
