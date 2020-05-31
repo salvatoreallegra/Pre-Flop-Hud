@@ -1,5 +1,1 @@
-class Hand {
-  constructor(handValue) {
-    this.handValue = handValue;
-  }
-}
+let hand = {};

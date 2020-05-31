@@ -1,11 +1,9 @@
-//Add click event listener to add player button
-//
-
 let button = document.querySelector("#addPlayer");
 button.addEventListener("click", () => {
   let opponents = JSON.parse(localStorage.getItem("opponents") || "[]");
 
   let opponentName = document.getElementById("opponent").value;
+
   opponents.push({
     name: opponentName,
     rfiHands: [],
