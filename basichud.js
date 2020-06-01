@@ -3,6 +3,7 @@ let opponents = JSON.parse(localStorage.getItem("opponents"));
 if (opponents === null) {
   alert("Please Add an Opponent");
 }
+
 //sort objects in array alphabetically by name
 function compare(a, b) {
   if (a.name < b.name) {
