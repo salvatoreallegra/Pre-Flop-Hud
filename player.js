@@ -1,21 +1,7 @@
-class Player {
-  constructor(screenName) {
-    this.screenName = screenName;
-    this.vpipPercentage = 0;
-    this.pfrPercentage = 0;
-  }
+function createPlayer(playerName) {}
 
-  setVpipPercentage(vpip) {
-    this.vpip = vpip;
-  }
-  getVpipPercentage() {
-    return this.vpipPercentage;
-  }
+function getPlayer(playerId) {}
 
-  setPfrPercentage(pfr) {
-    this.pfrPercentage = pfr;
-  }
-  getPfrPercentage() {
-    return this.pfrPercentage;
-  }
-}
+function deletePlayer(playerId) {}
+
+function upDatePlayer(playerId) {}

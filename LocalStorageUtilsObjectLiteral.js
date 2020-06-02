@@ -10,15 +10,6 @@ player = {
   vpip: 0,
   pfr: 0,
   totalHands: 0,
-  getVpip: function () {
-    return this.vpip;
-  },
-  getPfr: function () {
-    return this.pfr;
-  },
-  getTotalHands: function () {
-    return this.totalHands;
-  },
 
   handleCall: function () {
     this.totalHands++;
@@ -36,10 +27,11 @@ player = {
     this.vpip = (this.vpip * 100) / this.totalHands;
   },
 };
-
+player.name = playerName;
 playersArray.push(player);
 
 savePlayersToStorage(localStorageKey);
+
 function savePlayersToStorage(localStorageKey, playersArray) {
   localStorage.setItem(localStorageKey, playersArray);
 }
