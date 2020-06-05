@@ -20,6 +20,7 @@ function main() {
   players.push(player);
   players.push(player2);
   players.push(player3);
+
   savePlayersToStorage(localStorageKey, JSON.stringify(players));
 }
 
