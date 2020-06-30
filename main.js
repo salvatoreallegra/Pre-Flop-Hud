@@ -3,24 +3,17 @@
  * will call other functions
  * *******************************/
 
-import { createPlayer } from "./player.js";
+import { addPlayer } from "./player.js";
 import {
   savePlayersToStorage,
   getPlayersFromStorage,
 } from "./LocalStorageUtilsObjectLiteral.js";
 
 function main() {
+  let newPlayer = "Doug Polk";
   const localStorageKey = "stored_players";
-  let players = getPlayersFromStorage(localStorageKey);
-
-  let player = createPlayer("Crusty");
-  let player2 = createPlayer("Venom");
-  let player3 = createPlayer("JackBluffer");
-
-  players.push(player);
-  players.push(player2);
-  players.push(player3);
-
+  let players = getPlayersFromStorage(localStorageKey); //array of player objects in localStorage
+  players.push(addPlayer(newPlayer));
   savePlayersToStorage(localStorageKey, JSON.stringify(players));
 }
 

@@ -14,8 +14,4 @@ function getPlayersFromStorage(localStorageKey) {
   return players;
 }
 
-function printPlayers(localStorageKey) {
-  players = getPlayersFromStorage(localStorageKey);
-}
-
 export { savePlayersToStorage, getPlayersFromStorage };
