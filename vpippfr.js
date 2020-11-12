@@ -26,6 +26,7 @@ for (let i = 0; i < opponents.length; i++) {
 let playerLabel = document.getElementById("playerName");
 let vpipLabel = document.getElementById("vpip");
 let pfrLabel = document.getElementById("pfr");
+let handsLabel = document.getElementById("hands");
 
 sel.addEventListener("change", (event) => {
   playerLabel.innerText = sel.selectedOptions[0].innerText;
@@ -42,6 +43,7 @@ btnRaise.addEventListener("click", function () {
       opponents[i].raise++;
       vpipLabel.innerText = (opponents[i].vpip * 100) / opponents[i].totalHands;
       pfrLabel.innerText = (opponents[i].raise * 100) / opponents[i].totalHands;
+      handsLabel.innerText = opponents[i].totalHands;
     }
     localStorage.setItem("opponents", JSON.stringify(opponents));
     //let opponents = JSON.parse(localStorage.getItem("opponents"));
@@ -54,6 +56,7 @@ btnCall.addEventListener("click", function () {
       opponents[i].totalHands++;
       vpipLabel.innerText = (opponents[i].vpip * 100) / opponents[i].totalHands;
       pfrLabel.innerText = (opponents[i].raise * 100) / opponents[i].totalHands;
+      handsLabel.innerText = opponents[i].totalHands;
     }
     localStorage.setItem("opponents", JSON.stringify(opponents));
   }
@@ -65,6 +68,7 @@ btnFold.addEventListener("click", function () {
       opponents[i].totalHands++;
       vpipLabel.innerText = (opponents[i].vpip * 100) / opponents[i].totalHands;
       pfrLabel.innerText = (opponents[i].raise * 100) / opponents[i].totalHands;
+      handsLabel.innerText = opponents[i].totalHands;
     }
     localStorage.setItem("opponents", JSON.stringify(opponents));
   }
