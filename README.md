@@ -1,4 +1,4 @@
-# 🚀 Pre-Flop HUD
+# 🂡 Pre-Flop HUD
 
 
 > **Pre-Flop HUD** is a an html page powered by Javascript that uses local storage to track you opponents VPIP/PFR
@@ -11,8 +11,27 @@
 ## 🌟 Features
 
 - ✅ **Track Individual Player**: Brief description.
-- ✅ **Track VPIP*: The amount of hands and opponent plays (how loose or tight)
+- ✅ **Track VPIP**: The amount of hands and opponent plays (how loose or tight)
 - ✅ **Track PFR**: The amount of raising your opponent does (how passive or aggressive)
+
+---
+
+## 🚀 How to Run the Project
+
+Follow these steps to get the project up and running on your local machine:
+
+### Prerequisites
+- [Tool/Dependency Name](https://example.com) (e.g., Node.js, .NET, Docker, etc.)
+- [Another Dependency](https://example.com)
+
+### Steps
+
+1. **Clone the Repository**  
+   Use the following command to clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/yourusername/project-name.git
+   cd project-name
+
 
 
 
