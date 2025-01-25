@@ -1,20 +1,18 @@
-# 🚀 Project Name
+# 🚀 Pre-Flop HUD
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](#)
 
-> **Project Name** is a [short description of your project]. It provides [brief details on features, purpose, or functionality].
+> **Pre-Flop HUD** is a an html page powered by Javascript that uses local storage to track you opponents VPIP/PFR
+> statistics.  Normally this is done with Poker Tracker 4, HEM2 or Hand2Note, however there are poker clients that
+> don't store HH's on the users system.  With Pre-Flop HUD you can focus on one player at a time and slowly build a
+> profile on them on non-anonyumous sites.
 
 ---
 
 ## 🌟 Features
 
-- ✅ **Feature 1**: Brief description.
-- ✅ **Feature 2**: Brief description.
-- ✅ **Feature 3**: Brief description.
+- ✅ **Track Individual Player**: Brief description.
+- ✅ **Track VPIP*: The amount of hands and opponent plays (how loose or tight)
+- ✅ **Track PFR**: The amount of raising your opponent does (how passive or aggressive)
 
----
 
-## 📂 Project Structure
 
