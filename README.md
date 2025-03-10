@@ -10,7 +10,7 @@
 
 ## 🌟 Features
 
-- ✅ **Track Individual Player**: Brief description.
+- ✅ **Track Individual Player**: You enter the opponents screen name to add them to your browsers local storage system.
 - ✅ **Track VPIP**: The amount of hands and opponent plays (how loose or tight)
 - ✅ **Track PFR**: The amount of raising your opponent does (how passive or aggressive)
 
@@ -21,16 +21,16 @@
 Follow these steps to get the project up and running on your local machine:
 
 ### Prerequisites
-- [Tool/Dependency Name](https://example.com) (e.g., Node.js, .NET, Docker, etc.)
-- [Another Dependency](https://example.com)
+All you need is a browser.
 
 ### Steps
 
-1. **Clone the Repository**  
+   **Clone the Repository and open index.html**  
    Use the following command to clone the repository to your local machine:
    ```bash
-   git clone https://github.com/yourusername/project-name.git
-   cd project-name
+   git clone https://github.com/salvatoreallegra/Pre-Flop-Hud.git
+   cd Pre-Flop-Hud
+   Open index.html in your browser.
 
 
 
